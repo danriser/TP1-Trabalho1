@@ -8,7 +8,7 @@ using namespace std;
 class Dominio {
     private:
         string valor;
-        virtual void validar(string) = 0;
+        void validar(string);
     public:
         void setValor(string);
         string getValor();
