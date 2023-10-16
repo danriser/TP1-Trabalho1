@@ -49,12 +49,14 @@ class Limite:public Dominio {
 class Senha:public Dominio {
     private:
         static const int LIMITE = 5;
+    public:
         void validar(string);
 };
 
 class Texto:public Dominio {
     private:
         static const int LIMITE = 30;
+    public:
         void validar(string);
 };
 
