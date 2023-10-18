@@ -5,30 +5,59 @@
 
 using namespace std;
 
-class Codigo {
+class Dominio {
     private:
         string valor;
-        void validar(string); /*o codigo validar precisa seguir os seguintes requisitos LLDD*/
-    public:                   /*L sendo uma letra maiuscula e D um numero*/
+        virtual void validar(string) = 0;
+    public:
         void setValor(string);
         string getValor();
 };
 
-inline string Codigo::getValor(){
+inline string Dominio::getValor(){
     return valor;
 }
 
+void Dominio::setValor(string valor) {
+    validar(valor);
+    this->valor = valor;
+}
 
-class Coluna {
+class Codigo:public Dominio {
     private:
-        string valor;
-        void validar(string);/*o codigo validar vai ser uma verificacao condicional com as seguintes possibilidades*/
-    public:                  /*SOLICITADO, EM EXECUCAO, CONCLUIDO*/
-        void setValor(string);
-        string getValor();
-
+        static const int LIMITE = 4;
+        void validar(string);
 };
 
-inline string Coluna::getValor(){
-    return valor;
-}
+class Coluna:public Dominio {
+    private:
+        void validar(string);
+};
+
+class Email:public Dominio {
+    private:
+        static const int LIMITE_NOME = 10;
+        static const int LIMITE_DOMINIO = 20;
+        void validar(string);
+};
+
+class Limite:public Dominio {
+    private:
+        void validar(string);
+};
+
+class Senha:public Dominio {
+    private:
+        static const int LIMITE = 5;
+    public:
+        void validar(string);
+};
+
+class Texto:public Dominio {
+    private:
+        static const int LIMITE = 30;
+    public:
+        void validar(string);
+};
+
+#endif // DOMINIOS_H_INCLUDED
