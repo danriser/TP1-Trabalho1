@@ -7,10 +7,14 @@
 
 using namespace std;
 
-// Teste de unidade de classe que representa um domínio.
+// EXEMPLO
+// --------------------------------------------------------
+
+// Teste de unidade de classe que representa um dom�nio.
 
 class TUDominio {
 private:
+    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
@@ -37,19 +41,17 @@ public:
 class TUCodigo:public TUDominio {
 
 private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO; 
-    Codigo *codigo;
+
+   Codigo *codigo;
 
 public:
 
+
 };
 
-
-class TUEmail:public TUDominio {
+class TUEmail:TUDominio {
 private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO; 
+
     Email *email;
     
 public:
@@ -57,12 +59,9 @@ public:
 
 };
 
-
-
-class TULimite:public TUDominio {
+class TULimite:TUDominio {
 private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO; 
+
     Limite *limite;
     
 public:
@@ -70,10 +69,9 @@ public:
 
 };
 
-class TUSenha:public TUDominio {
+class TUSenha:TUDominio {
 private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO; 
+
     Senha *senha;
 
 public:
@@ -83,12 +81,10 @@ public:
 
 class TUTexto:TUDominio {
 private:
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO; 
+
     Texto *texto;
 public:
 
 
 };
-
 #endif // TESTES_H_INCLUDED
