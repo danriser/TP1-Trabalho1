@@ -7,19 +7,15 @@
 
 using namespace std;
 
-// EXEMPLO
-// --------------------------------------------------------
+// Teste de unidade de classe que representa um domínio.
 
-// Teste de unidade de classe que representa um dom�nio.
-
-class TUDominio {
+class TUCodigo {
 private:
-    // Definições de constantes com o intuito de evitar numeros mágicos.
 
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Dominio *dominio;         // Referência para o objeto a ser testado.
+    Codigo *codigo;         // Referência para o objeto a ser testado.
 
     string estado;             // Estado do teste.
 
@@ -38,53 +34,105 @@ public:
 
 };
 
-class TUCodigo:public TUDominio {
-
+class TUEmail {
 private:
 
-   Codigo *codigo;
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Email *email;         // Referência para o objeto a ser testado.
+
+    string estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
 public:
 
+    // Definições de constantes para reportar resultado do teste.
+
+    const static string SUCESSO;
+    const static string FALHA;
+    string run();
 
 };
 
-class TUEmail:TUDominio {
+class TULimite {
 private:
 
-    Email *email;
-    
-public:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
 
+    Limite *limite;         // Referência para o objeto a ser testado.
 
-};
+    string estado;             // Estado do teste.
 
-class TULimite:TUDominio {
-private:
-
-    Limite *limite;
-    
-public:
-
-
-};
-
-class TUSenha:TUDominio {
-private:
-
-    Senha *senha;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
 public:
 
+    // Definições de constantes para reportar resultado do teste.
+
+    const static string SUCESSO;
+    const static string FALHA;
+    string run();
 
 };
 
-class TUTexto:TUDominio {
+class TUSenha {
 private:
 
-    Texto *texto;
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Senha *senha;         // Referência para o objeto a ser testado.
+
+    string estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
 public:
 
+    // Definições de constantes para reportar resultado do teste.
+
+    const static string SUCESSO;
+    const static string FALHA;
+    string run();
 
 };
+
+class TUTexto {
+private:
+
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Texto *texto;         // Referência para o objeto a ser testado.
+
+    string estado;             // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+
+    // Definições de constantes para reportar resultado do teste.
+
+    const static string SUCESSO;
+    const static string FALHA;
+    string run();
+
+};
+
+
 #endif // TESTES_H_INCLUDED
