@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['limite_20',['Limite',['../classLimite.html',1,'']]]
+  ['limite_22',['Limite',['../classLimite.html',1,'']]]
 ];
