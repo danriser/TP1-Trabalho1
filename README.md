@@ -7,10 +7,6 @@
 * Guilherme Pereira Sampaio - Matrícula: 200058151
 * Kaleb Henrique Silva Pereira - Matricula: 221020904
 
-## Para executar o programa:
-
-## Para executar os testes de entidade:
-
-## Para executar os testes de unidade:
-
+## Para executar o programa: 
+Com o Code::blocks aberto, basta selecionar o projeto e realizar o build and run com o debugador padrão.
 
