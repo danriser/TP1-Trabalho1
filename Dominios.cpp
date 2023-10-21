@@ -2,6 +2,9 @@
 #include <stdexcept>
 #include <iostream>
 
+void Dominio::validar(string){
+}
+
 void Codigo::validar(string valor) {
     if (valor.length() > LIMITE) {
         throw invalid_argument("Argumento invalido.");
