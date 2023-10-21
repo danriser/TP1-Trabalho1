@@ -14,6 +14,7 @@ class Dominio {
         string getValor();
 };
 
+
 inline string Dominio::getValor(){
     return valor;
 }

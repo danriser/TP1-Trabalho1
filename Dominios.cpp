@@ -2,6 +2,7 @@
 #include <stdexcept>
 #include <iostream>
 
+
 void Dominio::validar(string){
 }
 
@@ -121,33 +122,6 @@ void Senha::validar(string valor) {
     }
 }
 
-/*int main() {
-    Senha senha;
-
-    try {
-        // Teste de senha válida
-        string senhaValida = "Abc.9";
-        cout << "Testando senha válida: " << senhaValida << endl;
-        senha.validar(senhaValida);
-        cout << "Senha válida." << endl;
-    } catch (const invalid_argument &e) {
-        cerr << "Erro: " << e.what() << endl;
-    }
-
-    try {
-        // Teste de senha inválida (não possui caracteres especiais)
-        string senhaInvalida = "abcde";
-        cout << "\nTestando senha inválida: " << senhaInvalida << endl;
-        senha.validar(senhaInvalida);
-        cout << "Senha válida." << endl;
-    } catch (const invalid_argument &e) {
-        cerr << "Erro: " << e.what() << endl;
-    }
-
-    return 0;
-}
-*/
-
 void Texto::validar(string valor) {
     int tamanho = valor.length();
 
@@ -193,31 +167,3 @@ void Texto::validar(string valor) {
         throw invalid_argument("O primeiro caractere do texto deve ser letra maiúscula.");
     }
 }
-
-/*
-int main() {
-    Texto texto;
-
-    try {
-        // Teste de texto válido
-        string textoValido = "Exemplo de Texto.";
-        cout << "Testando texto válido: " << textoValido << endl;
-        texto.validar(textoValido);
-        cout << "Texto válido." << endl;
-    } catch (const invalid_argument &e) {
-        cerr << "Erro: " << e.what() << endl;
-    }
-
-    try {
-        // Teste de texto inválido (primeira letra minúscula)
-        string textoInvalido = "texto com lestra minuscula";
-        cout << "\nTestando texto inválido: " << textoInvalido << endl;
-        texto.validar(textoInvalido);
-        cout << "Texto válido." << endl;
-    } catch (const invalid_argument &e) {
-        cerr << "Erro: " << e.what() << endl;
-    }
-
-    return 0;
-}
-*/
