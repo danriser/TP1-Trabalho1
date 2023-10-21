@@ -5,60 +5,93 @@
 
 using namespace std;
 
-class Dominio {
+// Codigo
+class Codigo {
+    private:
+        string valor;
+        static const int LIMITE = 4;
+        void validar(string);
+    public:
+        void setValor(const string&);
+        string getValor();    
+};
+
+inline string Codigo::getValor() {
+    return valor;
+}
+
+// Email
+class Email {
+    private:
+        string valor;
+        static const int LIMITE_NOME = 10;
+        static const int LIMITE_DOMINIO = 20;
+        void validar(string);
+    public:
+        void setValor(const string&);
+        string getValor();    
+};
+
+inline string Email::getValor() {
+    return valor;
+}
+
+// Senha
+class Senha {
+    private:
+        string valor;
+        static const int LIMITE = 5;
+        void validar(string);
+    public:
+        void setValor(const string&);
+        string getValor();    
+};
+
+inline string Senha::getValor() {
+    return valor;
+}
+
+// Texto
+class Texto {
+    private:
+        string valor;
+        static const int LIMITE = 30;
+        void validar(string);
+    public:
+        void setValor(const string&);
+        string getValor();    
+};
+
+inline string Texto::getValor() {
+    return valor;
+}
+
+// Limite
+class Limite {
+    private:
+        int valor;
+        void validar(int);
+    public:
+        void setValor(const int&);
+        int getValor();    
+};
+
+inline int Limite::getValor() {
+    return valor;
+}
+
+// Coluna
+class Coluna {
     private:
         string valor;
         void validar(string);
     public:
-        void setValor(string);
-        string getValor();
+        void setValor(const string&);
+        string getValor();    
 };
 
-
-inline string Dominio::getValor(){
+inline string Coluna::getValor() {
     return valor;
 }
-
-void Dominio::setValor(string valor) {
-    validar(valor);
-    this->valor = valor;
-}
-
-class Codigo:public Dominio {
-    private:
-        static const int LIMITE = 4;
-        void validar(string);
-};
-
-class Coluna:public Dominio {
-    private:
-        void validar(string);
-};
-
-class Email:public Dominio {
-    private:
-        static const int LIMITE_NOME = 10;
-        static const int LIMITE_DOMINIO = 20;
-        void validar(string);
-};
-
-class Limite:public Dominio {
-    private:
-        void validar(string);
-};
-
-class Senha:public Dominio {
-    private:
-        static const int LIMITE = 5;
-    public:
-        void validar(string);
-};
-
-class Texto:public Dominio {
-    private:
-        static const int LIMITE = 30;
-    public:
-        void validar(string);
-};
 
 #endif // DOMINIOS_H_INCLUDED

@@ -3,21 +3,22 @@
 
 #include <stdexcept>
 #include <iostream>
-#include "Dominios.h"
+
+#include "dominios.h"
 
 using namespace std;
 
 // Teste de unidade de classe que representa um domínio.
 
-class TUCodigo {
+class TUCodigo
+{
 private:
-
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Codigo *codigo;         // Referência para o objeto a ser testado.
+    Codigo *codigo; // Referência para o objeto a ser testado.
 
-    string estado;             // Estado do teste.
+    int estado; // Estado do teste.
 
     void setUp();
     void tearDown();
@@ -25,24 +26,22 @@ private:
     void testarCenarioFalha();
 
 public:
-
     // Definições de constantes para reportar resultado do teste.
 
-    const static string SUCESSO;
-    const static string FALHA;
-    string run();
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUEmail {
+class TUEmail
+{
 private:
-
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Email *email;         // Referência para o objeto a ser testado.
+    Email *email; // Referência para o objeto a ser testado.
 
-    string estado;             // Estado do teste.
+    int estado; // Estado do teste.
 
     void setUp();
     void tearDown();
@@ -50,24 +49,22 @@ private:
     void testarCenarioFalha();
 
 public:
-
     // Definições de constantes para reportar resultado do teste.
 
-    const static string SUCESSO;
-    const static string FALHA;
-    string run();
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TULimite {
+class TULimite
+{
 private:
+    const static int VALOR_VALIDO;
+    const static int VALOR_INVALIDO;
 
-    const static string VALOR_VALIDO;
-    const static string VALOR_INVALIDO;
+    Limite *limite; // Referência para o objeto a ser testado.
 
-    Limite *limite;         // Referência para o objeto a ser testado.
-
-    string estado;             // Estado do teste.
+    int estado; // Estado do teste.
 
     void setUp();
     void tearDown();
@@ -75,24 +72,22 @@ private:
     void testarCenarioFalha();
 
 public:
-
     // Definições de constantes para reportar resultado do teste.
 
-    const static string SUCESSO;
-    const static string FALHA;
-    string run();
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUSenha {
+class TUSenha
+{
 private:
-
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Senha *senha;         // Referência para o objeto a ser testado.
+    Senha *senha; // Referência para o objeto a ser testado.
 
-    string estado;             // Estado do teste.
+    int estado; // Estado do teste.
 
     void setUp();
     void tearDown();
@@ -100,24 +95,22 @@ private:
     void testarCenarioFalha();
 
 public:
-
     // Definições de constantes para reportar resultado do teste.
 
-    const static string SUCESSO;
-    const static string FALHA;
-    string run();
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUTexto {
+class TUTexto
+{
 private:
-
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Texto *texto;         // Referência para o objeto a ser testado.
+    Texto *texto; // Referência para o objeto a ser testado.
 
-    string estado;             // Estado do teste.
+    int estado; // Estado do teste.
 
     void setUp();
     void tearDown();
@@ -125,14 +118,34 @@ private:
     void testarCenarioFalha();
 
 public:
-
     // Definições de constantes para reportar resultado do teste.
 
-    const static string SUCESSO;
-    const static string FALHA;
-    string run();
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
+class TUColuna
+{
+private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Coluna *coluna; // Referência para o objeto a ser testado.
+
+    int estado; // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    // Definições de constantes para reportar resultado do   teste.
+
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+};
 
 #endif // TESTES_H_INCLUDED

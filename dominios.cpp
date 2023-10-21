@@ -1,9 +1,12 @@
-#include "Dominios.h"
+#include "dominios.h"
 #include <stdexcept>
 #include <iostream>
 
+using namespace std;
 
-void Dominio::validar(string){
+void Codigo::setValor(const string& valor) {
+    validar(valor);
+    this->valor = valor;
 }
 
 void Codigo::validar(string valor) {
@@ -25,10 +28,20 @@ void Codigo::validar(string valor) {
     }
 }
 
+void Coluna::setValor(const string& valor) {
+    validar(valor);
+    this->valor = valor;
+}
+
 void Coluna::validar(string valor) {
     if (valor != "SOLICITADO" && valor != "EM EXECUCAO" && valor != "CONCLUIDO") {
         throw invalid_argument("Argumento invalido.");
     }
+}
+
+void Email::setValor(const string& valor) {
+    validar(valor);
+    this->valor = valor;
 }
 
 void Email::validar(string valor) {
@@ -36,35 +49,37 @@ void Email::validar(string valor) {
     string dominio;
 
     if (valor.length() > LIMITE_NOME + LIMITE_DOMINIO + 1) {
+        cout << 1 << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
     if (valor.find('@') == string::npos) {  // verifica se existe @
-        throw invalid_argument("Argumento invalido.");
-    }
-
-    if (valor.find('@') == 0 || valor.find('@') == valor.length() - 1) {
+        cout << 2 << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
     if (valor.find('@') != valor.rfind('@')) {  // verifica se ha dois @
+        cout << 3 << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
     if (valor.find('@') - 1 == '.' || valor.find('@') + 1 == '.') {
+        cout << 4 << endl;
         throw invalid_argument("Argumento invalido.");
     }
 
     for (int i = 0; i < valor.length() - 1; i++) {
-        if (   valor[i] < 'A' || valor[i] > 'Z' 
-            && valor[i] < 'a' || valor[i] > 'z' 
-            && valor[i] < '0' || valor[i] > '9' 
-            && valor[i] != '.' 
-            && valor[i] != '@')
+        if (   !(valor[i] < 'A' || valor[i] > 'Z'
+            || valor[i] < 'a' || valor[i] > 'z'
+            || valor[i] < '0' || valor[i] > '9'
+            || valor[i] != '.'
+            || valor[i] != '@'))
         {
+            cout << valor[i] << endl;
             throw invalid_argument("Argumento invalido.");
         }
         if (valor[i] == '.' && valor[i + 1] == '.') {
+            cout << 6 << endl;
             throw invalid_argument("Argumento invalido.");
         }
     }
@@ -82,10 +97,20 @@ void Email::validar(string valor) {
     }
 }
 
-void Limite::validar(string valor) {
-    if (valor != "5" && valor != "10" && valor != "15" && valor != "20") {
+void Limite::setValor(const int& valor) {
+    validar(valor);
+    this->valor = valor;
+}
+
+void Limite::validar(int valor) {
+    if (valor != 5 && valor != 10 && valor != 15 && valor != 20) {
         throw invalid_argument("Argumento invalido.");
     }
+}
+
+void Senha::setValor(const string& valor) {
+    validar(valor);
+    this->valor = valor;
 }
 
 void Senha::validar(string valor) {
@@ -120,6 +145,11 @@ void Senha::validar(string valor) {
     if (!temLetraMaiuscula || !temLetraMinuscula || !temDigito || !temPontoExclamacaoOuPontoVirgula) {
         throw invalid_argument("A senha não atende aos critérios de complexidade.");
     }
+}
+
+void Texto::setValor(const string& valor) {
+    validar(valor);
+    this->valor = valor;
 }
 
 void Texto::validar(string valor) {
