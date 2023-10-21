@@ -31,12 +31,12 @@ class Quadro {
         void setLimite(const Limite&);
 };
 
-class Quadro {
+class Cartao {
     private:
         Codigo codigo;
         Texto nome;
         Texto descricao;
-        Limite limite;
+        Coluna coluna;
     public:
         Codigo getCodigo();
         void setCodigo(const Codigo&);
