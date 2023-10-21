@@ -58,6 +58,11 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "stdexcept": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "*.tcc": "cpp",
+    "compare": "cpp",
+    "memory_resource": "cpp",
+    "type_traits": "cpp"
   }
 }

@@ -3,25 +3,22 @@
 
 #include <stdexcept>
 #include <iostream>
-#include "Dominios.h"
+
+#include "dominios.h"
 
 using namespace std;
 
-// EXEMPLO
-// --------------------------------------------------------
+// Teste de unidade de classe que representa um domínio.
 
-// Teste de unidade de classe que representa um dom�nio.
-
-class TUDominio {
+class TUCodigo
+{
 private:
-    // Definições de constantes com o intuito de evitar numeros mágicos.
-
     const static string VALOR_VALIDO;
     const static string VALOR_INVALIDO;
 
-    Dominio *dominio;         // Referência para o objeto a ser testado.
+    Codigo *codigo; // Referência para o objeto a ser testado.
 
-    string estado;             // Estado do teste.
+    int estado; // Estado do teste.
 
     void setUp();
     void tearDown();
@@ -29,62 +26,126 @@ private:
     void testarCenarioFalha();
 
 public:
-
     // Definições de constantes para reportar resultado do teste.
 
-    const static string SUCESSO;
-    const static string FALHA;
-    string run();
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUCodigo:public TUDominio {
-
+class TUEmail
+{
 private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
 
-   Codigo *codigo;
+    Email *email; // Referência para o objeto a ser testado.
+
+    int estado; // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
 public:
+    // Definições de constantes para reportar resultado do teste.
 
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUEmail:TUDominio {
+class TULimite
+{
 private:
+    const static int VALOR_VALIDO;
+    const static int VALOR_INVALIDO;
 
-    Email *email;
-    
-public:
+    Limite *limite; // Referência para o objeto a ser testado.
 
+    int estado; // Estado do teste.
 
-};
-
-class TULimite:TUDominio {
-private:
-
-    Limite *limite;
-    
-public:
-
-
-};
-
-class TUSenha:TUDominio {
-private:
-
-    Senha *senha;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
 
 public:
+    // Definições de constantes para reportar resultado do teste.
 
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUTexto:TUDominio {
+class TUSenha
+{
 private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
 
-    Texto *texto;
+    Senha *senha; // Referência para o objeto a ser testado.
+
+    int estado; // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
 public:
+    // Definições de constantes para reportar resultado do teste.
 
-
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
+
+class TUTexto
+{
+private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Texto *texto; // Referência para o objeto a ser testado.
+
+    int estado; // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    // Definições de constantes para reportar resultado do teste.
+
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+};
+
+class TUColuna
+{
+private:
+    const static string VALOR_VALIDO;
+    const static string VALOR_INVALIDO;
+
+    Coluna *coluna; // Referência para o objeto a ser testado.
+
+    int estado; // Estado do teste.
+
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+    void testarCenarioFalha();
+
+public:
+    // Definições de constantes para reportar resultado do   teste.
+
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
+};
+
 #endif // TESTES_H_INCLUDED
