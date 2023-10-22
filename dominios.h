@@ -5,117 +5,131 @@
 
 using namespace std;
 
-// Codigo
-class Codigo {
-    /**
-     * @brief 
-     * Esta é a classe que denomina os metodos relacionado ao codigo
-     */
-    private:
-        string valor;
-        static const int LIMITE = 4;    
-        void validar(string);
-    public:
-        void setValor(const string&);
-        string getValor();    
+/*! \brief Domínio Codigo
+ *
+ * Há uma validacao para o codigo, que deve ser composto por 4 caracteres, sendo os dois primeiros letras maiusculas e os dois ultimos numeros.
+ */
+class Codigo
+{
+private:
+    string valor;
+    static const int LIMITE = 4;
+    void validar(string);
+
+public:
+    void setValor(const string &);
+    string getValor();
 };
 
-inline string Codigo::getValor() {
+inline string Codigo::getValor()
+{
     return valor;
 }
 
-// Email
-class Email {
-     /**
-     * @brief 
-     * Esta é a classe que denomina os metodos relacionado ao Email do usuario
-     */
-    private:
-        string valor;
-        static const int LIMITE_NOME = 10;
-        static const int LIMITE_DOMINIO = 20;
-        void validar(string);
-    public:
-        void setValor(const string&);
-        string getValor();    
+/*! \brief Domínio Email
+ *
+ * Há uma validacao para o email, que deve ser composto por um nome de ate 10 caracteres, seguido de @ e um dominio de ate 20 caracteres.
+ */
+class Email
+{
+private:
+    string valor;
+    static const int LIMITE_NOME = 10;
+    static const int LIMITE_DOMINIO = 20;
+    void validar(string);
+
+public:
+    void setValor(const string &);
+    string getValor();
 };
 
-inline string Email::getValor() {
+inline string Email::getValor()
+{
     return valor;
 }
 
-// Senha
-class Senha {
-     /**
-     * @brief 
-     * Esta é a classe que denomina os metodos relacionadas a senha do usuario
-     */
-    private:
-        string valor;
-        static const int LIMITE = 5;
-        void validar(string);
-    public:
-        void setValor(const string&);
-        string getValor();    
+/*! \brief Domínio Senha
+ *
+ * Há uma validacao para a senha, que deve ser composto por uma letra maiuscula,
+ * uma letra minuscula, um numero e um caractere especial.
+ */
+class Senha
+{
+private:
+    string valor;
+    static const int LIMITE = 5;
+    void validar(string);
+
+public:
+    void setValor(const string &);
+    string getValor();
 };
 
-inline string Senha::getValor() {
+inline string Senha::getValor()
+{
     return valor;
 }
 
-// Texto
-class Texto {
-     /**
-     * @brief 
-     * Esta é a classe que denomina os metodos relacionado aos "textos"
-     * como o nome e a descricao
-     */
-    private:
-        string valor;
-        static const int LIMITE = 30;
-        void validar(string);
-    public:
-        void setValor(const string&);
-        string getValor();    
+/*! \brief Domínio Texto
+ *
+ * Ha uma validacao para o texto, que deve ser composto por ate 30 caracteres.
+ */
+class Texto
+{
+private:
+    string valor;
+    static const int LIMITE = 30;
+    void validar(string);
+
+public:
+    void setValor(const string &);
+    string getValor();
 };
 
-inline string Texto::getValor() {
+inline string Texto::getValor()
+{
     return valor;
 }
 
-// Limite
-class Limite {
-     /**
-     * @brief 
-     * Esta é a classe que denomina os metodos relacionado ao limite
-     */
-    private:
-        int valor;
-        void validar(int);
-    public:
-        void setValor(const int&);
-        int getValor();    
+/*! \brief Domínio Limite
+ *
+ * Há uma validacao para o limite, que deve ser composto por um numero 
+ * entre 5 à 20 de 5 em cinco.
+ */
+class Limite
+{
+private:
+    int valor;
+    void validar(int);
+
+public:
+    void setValor(const int &);
+    int getValor();
 };
 
-inline int Limite::getValor() {
+inline int Limite::getValor()
+{
     return valor;
 }
 
-// Coluna
-class Coluna {
-     /**
-     * @brief 
-     * Esta é a classe que denomina os metodos relacionado à coluna
-     */
-    private:
-        string valor;
-        void validar(string);
-    public:
-        void setValor(const string&);
-        string getValor();    
+/*! \brief Domínio Coluna
+ *
+ * Há uma validacao para a coluna, que deve ser composto por uma string
+ * SOLICITADO, EM EXECUCAO ou CONCLUIDO.
+ */
+class Coluna
+{
+private:
+    string valor;
+    void validar(string);
+
+public:
+    void setValor(const string &);
+    string getValor();
 };
 
-inline string Coluna::getValor() {
+inline string Coluna::getValor()
+{
     return valor;
 }
 
