@@ -98,7 +98,6 @@ void TUEmail::testarCenarioSucesso()
         email->setValor(VALOR_VALIDO);
         if (email->getValor() != VALOR_VALIDO)
             estado = FALHA;
-
     }
     catch (invalid_argument &excecao)
     {
@@ -347,7 +346,7 @@ const string TUCartao::VALOR_NOME_VALIDO = "Este texto esta correto.";
 const string TUCartao::VALOR_DESCRICAO_VALIDO = "Este texto esta correto.";
 const string TUCartao::VALOR_COLUNA_VALIDO = "SOLICITADO";
 
-//Conta
+// Conta
 void TUConta::setUp()
 {
     conta = new Conta();
@@ -364,19 +363,19 @@ void TUConta::testarCenarioSucesso()
     Email email;
     email.setValor(VALOR_EMAIL_VALIDO);
     conta->setEmail(email);
-    if(conta->getEmail().getValor() != VALOR_EMAIL_VALIDO)
+    if (conta->getEmail().getValor() != VALOR_EMAIL_VALIDO)
         estado = FALHA;
 
     Texto nome;
     nome.setValor(VALOR_NOME_VALIDO);
     conta->setNome(nome);
-    if(conta->getNome().getValor() != VALOR_NOME_VALIDO)
+    if (conta->getNome().getValor() != VALOR_NOME_VALIDO)
         estado = FALHA;
 
     Senha senha;
     senha.setValor(VALOR_SENHA_VALIDO);
     conta->setSenha(senha);
-    if(conta->getSenha().getValor() != VALOR_SENHA_VALIDO)
+    if (conta->getSenha().getValor() != VALOR_SENHA_VALIDO)
         estado = FALHA;
 }
 
@@ -388,7 +387,7 @@ int TUConta::run()
     return estado;
 }
 
-//Quadro
+// Quadro
 void TUQuadro::setUp()
 {
     quadro = new Quadro();
@@ -405,28 +404,27 @@ void TUQuadro::testarCenarioSucesso()
     Codigo codigo;
     codigo.setValor(VALOR_CODIGO_VALIDO);
     quadro->setCodigo(codigo);
-    if(quadro->getCodigo().getValor() != VALOR_CODIGO_VALIDO)
+    if (quadro->getCodigo().getValor() != VALOR_CODIGO_VALIDO)
         estado = FALHA;
 
     Texto nome;
     nome.setValor(VALOR_NOME_VALIDO);
     quadro->setNome(nome);
-    if(quadro->getNome().getValor() != VALOR_NOME_VALIDO)
+    if (quadro->getNome().getValor() != VALOR_NOME_VALIDO)
         estado = FALHA;
 
     Texto descricao;
     descricao.setValor(VALOR_DESCRICAO_VALIDO);
     quadro->setDescricao(descricao);
-    if(quadro->getDescricao().getValor() != VALOR_DESCRICAO_VALIDO)
+    if (quadro->getDescricao().getValor() != VALOR_DESCRICAO_VALIDO)
         estado = FALHA;
 
     Limite limite;
     limite.setValor(VALOR_LIMITE_VALIDO);
     quadro->setLimite(limite);
-    if(quadro->getLimite().getValor() != VALOR_LIMITE_VALIDO)
+    if (quadro->getLimite().getValor() != VALOR_LIMITE_VALIDO)
         estado = FALHA;
 }
-
 
 int TUQuadro::run()
 {
@@ -453,29 +451,29 @@ void TUCartao::testarCenarioSucesso()
     Codigo codigo;
     codigo.setValor(VALOR_CODIGO_VALIDO);
     cartao->setCodigo(codigo);
-    if(cartao->getCodigo().getValor() != VALOR_CODIGO_VALIDO)
+    if (cartao->getCodigo().getValor() != VALOR_CODIGO_VALIDO)
         estado = FALHA;
 
     Texto nome;
     nome.setValor(VALOR_NOME_VALIDO);
     cartao->setNome(nome);
-    if(cartao->getNome().getValor() != VALOR_NOME_VALIDO)
+    if (cartao->getNome().getValor() != VALOR_NOME_VALIDO)
         estado = FALHA;
 
     Texto descricao;
     descricao.setValor(VALOR_DESCRICAO_VALIDO);
     cartao->setDescricao(descricao);
-    if(cartao->getDescricao().getValor() != VALOR_DESCRICAO_VALIDO)
+    if (cartao->getDescricao().getValor() != VALOR_DESCRICAO_VALIDO)
         estado = FALHA;
 
     Coluna coluna;
     coluna.setValor(VALOR_COLUNA_VALIDO);
     cartao->setColuna(coluna);
-    if(cartao->getColuna().getValor() != VALOR_COLUNA_VALIDO){
+    if (cartao->getColuna().getValor() != VALOR_COLUNA_VALIDO)
+    {
         estado = FALHA;
     }
 }
-
 
 int TUCartao::run()
 {

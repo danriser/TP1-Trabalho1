@@ -8,8 +8,10 @@
 
 using namespace std;
 
-// Teste de unidade de classe que representa um domínio.
-
+/*! \brief Teste de Dominio de Codigo
+ *
+ * O teste verifica se a validação de codigo é feita com sucesso.
+ */
 class TUCodigo
 {
 private:
@@ -33,6 +35,10 @@ public:
     int run();
 };
 
+/*! \brief Teste de Dominio de Email
+ *
+ * O teste verifica se a validação de email é feita com sucesso.
+ */
 class TUEmail
 {
 private:
@@ -56,6 +62,10 @@ public:
     int run();
 };
 
+/*! \brief Teste de Dominio de Limite
+ *
+ * O teste verifica se a validação de limite é feita com sucesso.
+ */
 class TULimite
 {
 private:
@@ -79,6 +89,10 @@ public:
     int run();
 };
 
+/*! \brief Teste de Dominio de Senha
+ *
+ * O teste verifica se a validação de senha é feita com sucesso.
+ */
 class TUSenha
 {
 private:
@@ -102,6 +116,10 @@ public:
     int run();
 };
 
+/*! \brief Teste de Dominio de Texto
+ *
+ * O teste verifica se a validação de texto é feita com sucesso.
+ */
 class TUTexto
 {
 private:
@@ -125,6 +143,10 @@ public:
     int run();
 };
 
+/*! \brief Teste de Dominio de Coluna
+ *
+ * O teste verifica se a validação de coluna é feita com sucesso.
+ */
 class TUColuna
 {
 private:
@@ -153,54 +175,80 @@ public:
  * Testes de Entidade
  */
 
-class TUConta{
+/*! \brief Teste de Entidade de Conta
+ *
+ *
+ * O teste valida se objetos de email, nome e senha são invocados com suceso.
+ */
+
+class TUConta
+{
+    /*! \brief Descrição breve
+     *
+     *
+     * Inicio a descrição detalhada.
+     */
+
 private:
     const static string VALOR_EMAIL_VALIDO;
     const static string VALOR_NOME_VALIDO;
     const static string VALOR_SENHA_VALIDO;
-    Conta *conta;                      
-    int estado;                            
-    void setUp();                           
-    void tearDown();                        
-    void testarCenarioSucesso(); 
+    Conta *conta;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
 public:
-    const static int SUCESSO =  0;         
-    const static int FALHA   = -1;         
-    int run();                             
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUQuadro {
+/*! \brief Teste de Entidade de Quadro
+ *
+ * O teste valida se objetos de codigo, nome, descricao e limite são invocados com suceso.
+ */
+class TUQuadro
+{
 private:
     const static string VALOR_CODIGO_VALIDO;
     const static string VALOR_NOME_VALIDO;
     const static string VALOR_DESCRICAO_VALIDO;
     const static int VALOR_LIMITE_VALIDO;
-    Quadro *quadro;                      
-    int estado;                            
-    void setUp();                           
-    void tearDown();                        
-    void testarCenarioSucesso();        
+    Quadro *quadro;
+    int estado;
+    void setUp();
+    void tearDown();
+    void testarCenarioSucesso();
+
 public:
-    const static int SUCESSO =  0;         
-    const static int FALHA   = -1;         
-    int run();                             
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-class TUCartao {
+/*! \brief Teste de Entidade de Cartao
+ *
+ * O teste valida se objetos de codigo, nome, coluna e descricao sao invocados com suceso.
+ */
+class TUCartao
+{
 private:
     const static string VALOR_CODIGO_VALIDO;
     const static string VALOR_NOME_VALIDO;
     const static string VALOR_DESCRICAO_VALIDO;
     const static string VALOR_COLUNA_VALIDO;
-    Cartao *cartao;                      
-    int estado;                            
-    void setUp();                           
-    void tearDown();                        
+    Cartao *cartao;
+    int estado;
+    void setUp();
+    void tearDown();
     void testarCenarioSucesso();
+
 public:
-    const static int SUCESSO =  0;         
-    const static int FALHA   = -1;         
-    int run();                             
+    const static int SUCESSO = 0;
+    const static int FALHA = -1;
+    int run();
 };
 
-#endif  // TESTES_H_INCLUDED
+#endif // TESTES_H_INCLUDED
