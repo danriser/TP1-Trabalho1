@@ -10,6 +10,11 @@ void Codigo::setValor(const string& valor) {
 }
 
 void Codigo::validar(string valor) {
+    /**
+     * @brief 
+     * o Validar verifica se os 2 primeiros caracteres sao letras e se o resto dos caracteres sao numeros.
+     * 
+     */
     if (valor.length() > LIMITE) {
         throw invalid_argument("Argumento invalido.");
     }
@@ -34,6 +39,11 @@ void Coluna::setValor(const string& valor) {
 }
 
 void Coluna::validar(string valor) {
+    /**
+     * @brief 
+     * a Validacao da Coluna é a verificacao de argumento se ele se encaixa em SOLICIDADO, EM EXECUCAO e CONCLUDO
+     * 
+     */
     if (valor != "SOLICITADO" && valor != "EM EXECUCAO" && valor != "CONCLUIDO") {
         throw invalid_argument("Argumento invalido.");
     }

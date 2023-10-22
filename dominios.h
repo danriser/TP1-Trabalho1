@@ -7,9 +7,13 @@ using namespace std;
 
 // Codigo
 class Codigo {
+    /**
+     * @brief 
+     * Esta é a classe que denomina os metodos relacionado ao codigo
+     */
     private:
         string valor;
-        static const int LIMITE = 4;
+        static const int LIMITE = 4;    
         void validar(string);
     public:
         void setValor(const string&);
@@ -22,6 +26,10 @@ inline string Codigo::getValor() {
 
 // Email
 class Email {
+     /**
+     * @brief 
+     * Esta é a classe que denomina os metodos relacionado ao Email do usuario
+     */
     private:
         string valor;
         static const int LIMITE_NOME = 10;
@@ -38,6 +46,10 @@ inline string Email::getValor() {
 
 // Senha
 class Senha {
+     /**
+     * @brief 
+     * Esta é a classe que denomina os metodos relacionadas a senha do usuario
+     */
     private:
         string valor;
         static const int LIMITE = 5;
@@ -53,6 +65,11 @@ inline string Senha::getValor() {
 
 // Texto
 class Texto {
+     /**
+     * @brief 
+     * Esta é a classe que denomina os metodos relacionado aos "textos"
+     * como o nome e a descricao
+     */
     private:
         string valor;
         static const int LIMITE = 30;
@@ -68,6 +85,10 @@ inline string Texto::getValor() {
 
 // Limite
 class Limite {
+     /**
+     * @brief 
+     * Esta é a classe que denomina os metodos relacionado ao limite
+     */
     private:
         int valor;
         void validar(int);
@@ -82,6 +103,10 @@ inline int Limite::getValor() {
 
 // Coluna
 class Coluna {
+     /**
+     * @brief 
+     * Esta é a classe que denomina os metodos relacionado à coluna
+     */
     private:
         string valor;
         void validar(string);
