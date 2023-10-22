@@ -4,7 +4,6 @@
 #include <stdexcept>
 #include <iostream>
 #include "entidades.h"
-#include "entidades.cpp"
 #include "dominios.h"
 
 using namespace std;
