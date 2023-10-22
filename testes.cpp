@@ -1,6 +1,7 @@
-#include "testes.h"
 #include <stdexcept>
 #include <iostream>
+
+#include "testes.h"
 
 using namespace std;
 
@@ -376,7 +377,7 @@ void TUConta::testarCenarioSucesso()
     senha.setValor(VALOR_SENHA_VALIDO);
     conta->setSenha(senha);
     if(conta->getSenha().getValor() != VALOR_SENHA_VALIDO)
-        estado = FALHA;    
+        estado = FALHA;
 }
 
 int TUConta::run()
@@ -423,7 +424,7 @@ void TUQuadro::testarCenarioSucesso()
     limite.setValor(VALOR_LIMITE_VALIDO);
     quadro->setLimite(limite);
     if(quadro->getLimite().getValor() != VALOR_LIMITE_VALIDO)
-        estado = FALHA;   
+        estado = FALHA;
 }
 
 
@@ -471,7 +472,7 @@ void TUCartao::testarCenarioSucesso()
     coluna.setValor(VALOR_COLUNA_VALIDO);
     cartao->setColuna(coluna);
     if(cartao->getColuna().getValor() != VALOR_COLUNA_VALIDO){
-        estado = FALHA;    
+        estado = FALHA;
     }
 }
 
