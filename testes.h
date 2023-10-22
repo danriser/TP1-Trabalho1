@@ -3,7 +3,8 @@
 
 #include <stdexcept>
 #include <iostream>
-
+#include "entidades.h"
+#include "entidades.cpp"
 #include "dominios.h"
 
 using namespace std;
@@ -18,7 +19,7 @@ private:
 
     Codigo *codigo; // Referência para o objeto a ser testado.
 
-    int estado; // Estado do teste.
+    int estado;
 
     void setUp();
     void tearDown();
@@ -41,7 +42,7 @@ private:
 
     Email *email; // Referência para o objeto a ser testado.
 
-    int estado; // Estado do teste.
+    int estado;
 
     void setUp();
     void tearDown();
@@ -64,7 +65,7 @@ private:
 
     Limite *limite; // Referência para o objeto a ser testado.
 
-    int estado; // Estado do teste.
+    int estado;
 
     void setUp();
     void tearDown();
@@ -87,7 +88,7 @@ private:
 
     Senha *senha; // Referência para o objeto a ser testado.
 
-    int estado; // Estado do teste.
+    int estado;
 
     void setUp();
     void tearDown();
@@ -110,7 +111,7 @@ private:
 
     Texto *texto; // Referência para o objeto a ser testado.
 
-    int estado; // Estado do teste.
+    int estado;
 
     void setUp();
     void tearDown();
@@ -133,7 +134,7 @@ private:
 
     Coluna *coluna; // Referência para o objeto a ser testado.
 
-    int estado; // Estado do teste.
+    int estado;
 
     void setUp();
     void tearDown();
@@ -148,4 +149,48 @@ public:
     int run();
 };
 
-#endif // TESTES_H_INCLUDED
+// --------------------------------------------------------------------------
+/**
+ * Testes de Entidade
+ */
+
+class TUConta{
+private:
+    Conta *conta;                      
+    int estado;                            
+    void setUp();                           
+    void tearDown();                        
+    void testarCenarioSucesso();          
+public:
+    const static int SUCESSO =  0;         
+    const static int FALHA   = -1;         
+    int run();                             
+};
+
+class TUQuadro {
+private:
+    Quadro *quadro;                      
+    int estado;                            
+    void setUp();                           
+    void tearDown();                        
+    void testarCenarioSucesso();            
+public:
+    const static int SUCESSO =  0;         
+    const static int FALHA   = -1;         
+    int run();                             
+};
+
+class TUCartao {
+private:
+    Cartao *cartao;                      
+    int estado;                            
+    void setUp();                           
+    void tearDown();                        
+    void testarCenarioSucesso();            
+public:
+    const static int SUCESSO =  0;         
+    const static int FALHA   = -1;         
+    int run();                             
+};
+
+#endif  // TESTES_H_INCLUDED
