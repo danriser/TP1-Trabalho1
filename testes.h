@@ -156,11 +156,14 @@ public:
 
 class TUConta{
 private:
+    const static string VALOR_EMAIL_VALIDO;
+    const static string VALOR_NOME_VALIDO;
+    const static string VALOR_SENHA_VALIDO;
     Conta *conta;                      
     int estado;                            
     void setUp();                           
     void tearDown();                        
-    void testarCenarioSucesso();          
+    void testarCenarioSucesso(); 
 public:
     const static int SUCESSO =  0;         
     const static int FALHA   = -1;         
@@ -169,11 +172,15 @@ public:
 
 class TUQuadro {
 private:
+    const static string VALOR_CODIGO_VALIDO;
+    const static string VALOR_NOME_VALIDO;
+    const static string VALOR_DESCRICAO_VALIDO;
+    const static int VALOR_LIMITE_VALIDO;
     Quadro *quadro;                      
     int estado;                            
     void setUp();                           
     void tearDown();                        
-    void testarCenarioSucesso();            
+    void testarCenarioSucesso();        
 public:
     const static int SUCESSO =  0;         
     const static int FALHA   = -1;         
@@ -182,11 +189,15 @@ public:
 
 class TUCartao {
 private:
+    const static string VALOR_CODIGO_VALIDO;
+    const static string VALOR_NOME_VALIDO;
+    const static string VALOR_DESCRICAO_VALIDO;
+    const static string VALOR_COLUNA_VALIDO;
     Cartao *cartao;                      
     int estado;                            
     void setUp();                           
     void tearDown();                        
-    void testarCenarioSucesso();            
+    void testarCenarioSucesso();
 public:
     const static int SUCESSO =  0;         
     const static int FALHA   = -1;         
