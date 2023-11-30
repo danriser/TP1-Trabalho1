@@ -1,4 +1,4 @@
-# Trabalho 1 de Técnicas de Programação 1
+# Trabalho 1 e 2 de Técnicas de Programação 1
 
 ## Realizado por: 
 
@@ -8,5 +8,4 @@
 * Kaleb Henrique Silva Pereira - Matricula: 221020904
 
 ## Para executar o programa: 
-Com o Code::blocks aberto, basta selecionar o projeto e realizar o build and run com o debugador padrão.
-
+Rode com o Code::Blocks.
