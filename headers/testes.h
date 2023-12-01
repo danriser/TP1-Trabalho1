@@ -5,6 +5,8 @@
 #include <iostream>
 #include "entidades.h"
 #include "dominios.h"
+#include "controladoras_apresentacao.h"
+#include "stubs.h"
 
 using namespace std;
 
@@ -249,6 +251,60 @@ public:
     const static int SUCESSO = 0;
     const static int FALHA = -1;
     int run();
+};
+
+// --------------------------------------------------------------------------
+/**
+ * Testes de Integração
+ */
+
+/*! \brief Teste de Integração
+ *
+ * O teste valida se a integração ocorre
+ */
+class TIApresentacao {
+   public:
+    void executar();
+};
+
+// --------------------------------------------------------------------------
+/**
+ * Testes de Modulo
+ */
+
+/*! \brief Teste de Modulo de Autenticação
+ *
+ * O teste valida se a autenticação ocorre
+ */
+class TUIAAutenticacao {
+   public:
+    void executar();
+};
+
+/*! \brief Teste de Modulo de Conta
+ *
+ * O teste valida se a conta funciona
+ */
+class TUIAConta {
+   public:
+    void executar();
+};
+
+/*! \brief Teste de Modulo de Cartao
+ *
+ * O teste valida se o cartao funciona
+ */
+class TUIACartao {
+   public:
+    void executar();
+};
+
+/*! \brief Teste de Modulo de Quadro
+ *
+ * O teste valida se o quadro funciona
+ */class TUIAQuadro {
+   public:
+    void executar();
 };
 
 #endif // TESTES_H_INCLUDED
