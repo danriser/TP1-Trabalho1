@@ -4,8 +4,9 @@
 #include "interfaces.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-class StubISAutenticacao : public ISAutenticacao {
-   private:
+class StubISAutenticacao : public ISAutenticacao
+{
+private:
     static Email emailStub;
     static Senha senhaStub;
 
@@ -17,8 +18,9 @@ class StubISAutenticacao : public ISAutenticacao {
 
     bool resultado;
 
-   public:
-    StubISAutenticacao() {
+public:
+    StubISAutenticacao()
+    {
         emailStub.setValor(VALOR_VALIDO_EMAIL);
         senhaStub.setValor(VALOR_VALIDO_SENHA);
     }
@@ -26,8 +28,9 @@ class StubISAutenticacao : public ISAutenticacao {
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class StubISConta : public ISConta {
-   private:
+class StubISConta : public ISConta
+{
+private:
     static Conta contaStub;
     static Email emailConta;
     static Texto nomeConta;
@@ -42,8 +45,9 @@ class StubISConta : public ISConta {
 
     bool resultado;
 
-   public:
-    StubISConta() {
+public:
+    StubISConta()
+    {
         emailConta.setValor(VALOR_VALIDO_EMAIL);
         nomeConta.setValor(VALOR_VALIDO_NOME);
         senhaConta.setValor(VALOR_VALIDO_SENHA);
@@ -59,8 +63,9 @@ class StubISConta : public ISConta {
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class StubISCartao : public ISCartao {
-   private:
+class StubISCartao : public ISCartao
+{
+private:
     static Cartao cartaoStub;
 
     static Codigo codigoCartao;
@@ -78,8 +83,9 @@ class StubISCartao : public ISCartao {
 
     bool resultado;
 
-   public:
-    StubISCartao() {
+public:
+    StubISCartao()
+    {
         codigoCartao.setValor(VALOR_VALIDO_CODIGO);
         nomeCartao.setValor(VALOR_VALIDO_NOME);
         descricaoCartao.setValor(VALOR_VALIDO_DESCRICAO);
@@ -98,8 +104,9 @@ class StubISCartao : public ISCartao {
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class StubISQuadro : public ISQuadro {
-   private:
+class StubISQuadro : public ISQuadro
+{
+private:
     static Quadro quadroStub;
 
     static Codigo codigoQuadro;
@@ -115,8 +122,9 @@ class StubISQuadro : public ISQuadro {
     const static bool SUCESSO = true;
     const static bool FALHA = false;
 
-   public:
-    StubISQuadro() {
+public:
+    StubISQuadro()
+    {
         codigoQuadro.setValor(VALOR_VALIDO_CODIGO);
         nomeQuadro.setValor(VALOR_VALIDO_NOME);
         descricaoQuadro.setValor(VALOR_VALIDO_DESCRICAO);
@@ -134,4 +142,4 @@ class StubISQuadro : public ISQuadro {
     bool descadastrar(Codigo);
 };
 
-#endif  // STUBS_H_INCLUDED
+#endif // STUBS_H_INCLUDED

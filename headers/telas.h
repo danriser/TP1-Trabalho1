@@ -10,42 +10,48 @@
 class TelaMensagem;
 
 //----------------------------------------------------------------------------------------------------------------------
-class Telas {
-   public:
+class Telas
+{
+public:
     int campo;
     int linha, coluna;
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaMensagem : public Telas {
-   public:
+class TelaMensagem : public Telas
+{
+public:
     void apresentar(string);
 };
 //----------------------------------------------------------------------------------------------------------------------
-class TelaInicial : public Telas {
-   public:
-    void selecionar(int *);  // Método que retorna a opção escolhida.
+class TelaInicial : public Telas
+{
+public:
+    void selecionar(int *); // Método que retorna a opção escolhida.
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaUsuarioLogado : public Telas {
-   public:
+class TelaUsuarioLogado : public Telas
+{
+public:
     void selecionar(int *);
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaAutenticacao : public Telas {
-   private:
+class TelaAutenticacao : public Telas
+{
+private:
     char matriculaAutenticacao[100] = "";
     char senhaAutenticacao[100] = "";
 
-   public:
+public:
     void autenticar(Email *, Senha *);
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaConta : public Telas {
-   private:
+class TelaConta : public Telas
+{
+private:
     Email email;
     Texto nome;
     Senha senha;
@@ -54,7 +60,7 @@ class TelaConta : public Telas {
     char nomeConta[100] = "";
     char senhaConta[100] = "";
 
-   public:
+public:
     void selecionar(int *);
     void mostrar(Conta);
     void visualizar(Conta *);
@@ -64,8 +70,9 @@ class TelaConta : public Telas {
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaCartao : public Telas {
-   private:
+class TelaCartao : public Telas
+{
+private:
     Codigo codigo;
     Texto nome;
     Texto descricao;
@@ -76,18 +83,19 @@ class TelaCartao : public Telas {
     char descricaoCartao[100] = "";
     char colunaCartao[100] = "";
 
-   public:
-    void mostrar(Cartao);          // mostrar valores
-    void selecionar(int *);       // tela de seleção
-    void visualizar(Cartao *);     // obter codigo
-    void cadastrar(Cartao *);      // defnir  valores Cartao
-    void editar(Cartao *);         // definir novos valores
-    void descadastrar(Codigo *);  // definir codigo
+public:
+    void mostrar(Cartao);        // mostrar valores
+    void selecionar(int *);      // tela de seleção
+    void visualizar(Cartao *);   // obter codigo
+    void cadastrar(Cartao *);    // defnir  valores Cartao
+    void editar(Cartao *);       // definir novos valores
+    void descadastrar(Codigo *); // definir codigo
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaQuadro : public Telas {
-   private:
+class TelaQuadro : public Telas
+{
+private:
     Codigo codigo;
     Texto nome;
     Texto descricao;
@@ -98,19 +106,20 @@ class TelaQuadro : public Telas {
     char descricaoQuadro[100] = "";
     char limiteQuadro[100] = "";
 
-   public:
-    void mostrar(Quadro);       // mostrar valores
-    void selecionar(int *);          // tela de seleção
-    void visualizar(Quadro *);  // obter codigo
-    void cadastrar(Quadro *);   // defnir  valores teste
-    void editar(Quadro *);      // definir novos valores
-    void descadastrar(Codigo *);     // definir codigo
+public:
+    void mostrar(Quadro);        // mostrar valores
+    void selecionar(int *);      // tela de seleção
+    void visualizar(Quadro *);   // obter codigo
+    void cadastrar(Quadro *);    // defnir  valores teste
+    void editar(Quadro *);       // definir novos valores
+    void descadastrar(Codigo *); // definir codigo
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaVer : public Telas {
-   public:
+class TelaVer : public Telas
+{
+public:
     void selecionar(int *);
 };
 
-#endif  // TELAS_H_INCLUDED
+#endif // TELAS_H_INCLUDED

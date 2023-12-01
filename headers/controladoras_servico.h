@@ -7,14 +7,16 @@
 //----------------------------------------------------------------------------------------------------------------------
 // Declarações de classes controladoras da camada de serviços e implementações de métodos inline.
 
-class CtrlISAutenticacao : public ISAutenticacao {
-   public:
+class CtrlISAutenticacao : public ISAutenticacao
+{
+public:
     bool autenticar(Email, Senha);
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlISConta : public ISConta {
-   public:
+class CtrlISConta : public ISConta
+{
+public:
     bool visualizar(Conta *);
     bool cadastrar(Conta);
     bool editar(Conta);
@@ -22,8 +24,9 @@ class CtrlISConta : public ISConta {
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlISCartao : public ISCartao {
-   public:
+class CtrlISCartao : public ISCartao
+{
+public:
     bool visualizar(Cartao *);
     bool cadastrar(Cartao);
     bool editar(Cartao);
@@ -31,12 +34,13 @@ class CtrlISCartao : public ISCartao {
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlISQuadro : public ISQuadro {
-   public:
+class CtrlISQuadro : public ISQuadro
+{
+public:
     bool visualizar(Quadro *);
     bool cadastrar(Quadro);
     bool editar(Quadro);
     bool descadastrar(Codigo);
 };
 
-#endif  // CONTROLADORAS_SERVICOS_H_INCLUDED
+#endif // CONTROLADORAS_SERVICOS_H_INCLUDED

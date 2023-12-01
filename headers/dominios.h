@@ -93,7 +93,7 @@ inline string Texto::getValor()
 
 /*! \brief Domínio Limite
  *
- * Há uma validacao para o limite, que deve ser composto por um numero 
+ * Há uma validacao para o limite, que deve ser composto por um numero
  * entre 5 à 20 de 5 em cinco.
  */
 class Limite

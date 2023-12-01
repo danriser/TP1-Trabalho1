@@ -7,8 +7,9 @@
 #include "telas.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlIAInicializacao {
-   private:
+class CtrlIAInicializacao
+{
+private:
     IAAutenticacao *ctrlIAAutenticacao;
     IAConta *ctrlIAConta;
     IACartao *ctrlIACartao;
@@ -23,7 +24,7 @@ class CtrlIAInicializacao {
     const static int QUADRO = 3;
     const static int VOLTAR = 4;
 
-   public:
+public:
     void executar();
     void setCtrlIAAutenticacao(IAAutenticacao *);
     void setCtrlIAConta(IAConta *);
@@ -31,41 +32,48 @@ class CtrlIAInicializacao {
     void setCtrlIAQuadro(IAQuadro *);
 };
 
-inline void CtrlIAInicializacao::setCtrlIAAutenticacao(IAAutenticacao *ctrlIAAutenticacao) {
+inline void CtrlIAInicializacao::setCtrlIAAutenticacao(IAAutenticacao *ctrlIAAutenticacao)
+{
     this->ctrlIAAutenticacao = ctrlIAAutenticacao;
 }
 
-inline void CtrlIAInicializacao::setCtrlIAConta(IAConta *ctrlIAConta) {
+inline void CtrlIAInicializacao::setCtrlIAConta(IAConta *ctrlIAConta)
+{
     this->ctrlIAConta = ctrlIAConta;
 }
 
-inline void CtrlIAInicializacao::setCtrlIACartao(IACartao *ctrlIACartao) {
+inline void CtrlIAInicializacao::setCtrlIACartao(IACartao *ctrlIACartao)
+{
     this->ctrlIACartao = ctrlIACartao;
 }
 
-inline void CtrlIAInicializacao::setCtrlIAQuadro(IAQuadro *ctrlIAQuadro) {
+inline void CtrlIAInicializacao::setCtrlIAQuadro(IAQuadro *ctrlIAQuadro)
+{
     this->ctrlIAQuadro = ctrlIAQuadro;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
 
-class CtrlIAAutenticacao : public IAAutenticacao {
-   private:
+class CtrlIAAutenticacao : public IAAutenticacao
+{
+private:
     ISAutenticacao *ctrlISAutenticacao;
     ComandoIAAutenticacao *comando;
 
-   public:
+public:
     bool executar(Email *);
     void setCtrlISAutenticacao(ISAutenticacao *ctrlISAutenticacao);
 };
 
-inline void CtrlIAAutenticacao::setCtrlISAutenticacao(ISAutenticacao *ctrlISAutenticacao) {
+inline void CtrlIAAutenticacao::setCtrlISAutenticacao(ISAutenticacao *ctrlISAutenticacao)
+{
     this->ctrlISAutenticacao = ctrlISAutenticacao;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlIAConta : public IAConta {
-   private:
+class CtrlIAConta : public IAConta
+{
+private:
     const static int VISUALIZAR = 1;
     const static int EDITAR = 2;
     const static int DESCADASTRAR = 3;
@@ -74,19 +82,21 @@ class CtrlIAConta : public IAConta {
     ISConta *ctrlISConta;
     ComandoIAConta *comando;
 
-   public:
+public:
     void setCtrlISConta(ISConta *);
     void cadastrar();
     void executar(Email);
 };
 
-inline void CtrlIAConta::setCtrlISConta(ISConta *ctrlISConta) {
+inline void CtrlIAConta::setCtrlISConta(ISConta *ctrlISConta)
+{
     this->ctrlISConta = ctrlISConta;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlIACartao : public IACartao {
-   private:
+class CtrlIACartao : public IACartao
+{
+private:
     const static int VISUALIZAR = 1;
     const static int CADASTRAR = 2;
     const static int EDITAR = 3;
@@ -96,18 +106,20 @@ class CtrlIACartao : public IACartao {
     ISCartao *ctrlISCartao;
     ComandoIACartao *comando;
 
-   public:
+public:
     void executar(Email);
     void setCtrlISCartao(ISCartao *);
 };
 
-inline void CtrlIACartao::setCtrlISCartao(ISCartao *ctrlISCartao) {
+inline void CtrlIACartao::setCtrlISCartao(ISCartao *ctrlISCartao)
+{
     this->ctrlISCartao = ctrlISCartao;
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-class CtrlIAQuadro : public IAQuadro {
-   private:
+class CtrlIAQuadro : public IAQuadro
+{
+private:
     const static int VISUALIZAR = 1;
     const static int CADASTRAR = 2;
     const static int EDITAR = 3;
@@ -117,13 +129,14 @@ class CtrlIAQuadro : public IAQuadro {
     ISQuadro *ctrlISQuadro;
     ComandoIAQuadro *comando;
 
-   public:
+public:
     void executar(Email);
     void setCtrlISQuadro(ISQuadro *);
 };
 
-inline void CtrlIAQuadro::setCtrlISQuadro(ISQuadro *ctrlISQuadro) {
+inline void CtrlIAQuadro::setCtrlISQuadro(ISQuadro *ctrlISQuadro)
+{
     this->ctrlISQuadro = ctrlISQuadro;
 }
 
-#endif  // CONTROLADORAS_APRESENTACAO_H_INCLUDED
+#endif // CONTROLADORAS_APRESENTACAO_H_INCLUDED

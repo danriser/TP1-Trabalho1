@@ -6,127 +6,148 @@
 #include "telas.h"
 
 //----------------------------------------------------------------------------------------------------------------------
-class ComandoIAAutenticacao {
-   protected:
+class ComandoIAAutenticacao
+{
+protected:
     bool resultado;
     Email *email;
     Senha senha;
     TelaAutenticacao telaAutenticacao;
 
-   public:
+public:
     virtual bool executar(ISAutenticacao *) = 0;
     virtual ~ComandoIAAutenticacao(){};
 };
 
-class ComandoIAAutenticacaoAutenticar : public ComandoIAAutenticacao {
-   public:
-    ComandoIAAutenticacaoAutenticar(Email *email) {
+class ComandoIAAutenticacaoAutenticar : public ComandoIAAutenticacao
+{
+public:
+    ComandoIAAutenticacaoAutenticar(Email *email)
+    {
         this->email = email;
     };
     bool executar(ISAutenticacao *);
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class ComandoIAConta {
-   protected:
+class ComandoIAConta
+{
+protected:
     bool resultado;
     Conta conta;
     Email email;
     TelaConta telaConta;
     TelaMensagem telaMensagem;
 
-   public:
+public:
     virtual void executar(ISConta *) = 0;
 };
 
-class ComandoIAContaCadastrar : public ComandoIAConta {
-   public:
+class ComandoIAContaCadastrar : public ComandoIAConta
+{
+public:
     void executar(ISConta *);
 };
 
-class ComandoIAContaVisualizar : public ComandoIAConta {
-   public:
-    ComandoIAContaVisualizar(Email email) {
+class ComandoIAContaVisualizar : public ComandoIAConta
+{
+public:
+    ComandoIAContaVisualizar(Email email)
+    {
         this->email = email;
     }
     void executar(ISConta *);
 };
 
-class ComandoIAContaEditar : public ComandoIAConta {
-   public:
-    ComandoIAContaEditar(Email email) {
+class ComandoIAContaEditar : public ComandoIAConta
+{
+public:
+    ComandoIAContaEditar(Email email)
+    {
         this->email = email;
     }
     void executar(ISConta *);
 };
 
-class ComandoIAContaDescadastrar : public ComandoIAConta {
-   public:
-    ComandoIAContaDescadastrar(Email email) {
+class ComandoIAContaDescadastrar : public ComandoIAConta
+{
+public:
+    ComandoIAContaDescadastrar(Email email)
+    {
         this->email = email;
     }
     void executar(ISConta *);
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class ComandoIACartao {
-   protected:
+class ComandoIACartao
+{
+protected:
     bool resultado;
     Cartao cartao;
     Codigo codigo;
     TelaCartao telaCartao;
     TelaMensagem telaMensagem;
 
-   public:
+public:
     virtual void executar(ISCartao *) = 0;
     virtual ~ComandoIACartao() {}
 };
 
-class ComandoIACartaoVisualizar : public ComandoIACartao {
-   public:
+class ComandoIACartaoVisualizar : public ComandoIACartao
+{
+public:
     void executar(ISCartao *);
 };
 
-class ComandoIACartaoCadastrar : public ComandoIACartao {
+class ComandoIACartaoCadastrar : public ComandoIACartao
+{
     void executar(ISCartao *);
 };
 
-class ComandoIACartaoEditar : public ComandoIACartao {
+class ComandoIACartaoEditar : public ComandoIACartao
+{
     void executar(ISCartao *);
 };
 
-class ComandoIACartaoDescadastrar : public ComandoIACartao {
+class ComandoIACartaoDescadastrar : public ComandoIACartao
+{
     void executar(ISCartao *);
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class ComandoIAQuadro {
-   protected:
+class ComandoIAQuadro
+{
+protected:
     bool resultado;
     Quadro quadro;
     Codigo codigo;
     TelaQuadro telaQuadro;
     TelaMensagem telaMensagem;
 
-   public:
+public:
     virtual void executar(ISQuadro *) = 0;
     virtual ~ComandoIAQuadro() {}
 };
 
-class ComandoIAQuadroVisualizar : public ComandoIAQuadro {
+class ComandoIAQuadroVisualizar : public ComandoIAQuadro
+{
     void executar(ISQuadro *);
 };
 
-class ComandoIAQuadroCadastrar : public ComandoIAQuadro {
+class ComandoIAQuadroCadastrar : public ComandoIAQuadro
+{
     void executar(ISQuadro *);
 };
 
-class ComandoIAQuadroEditar : public ComandoIAQuadro {
+class ComandoIAQuadroEditar : public ComandoIAQuadro
+{
     void executar(ISQuadro *);
 };
 
-class ComandoIAQuadroDescadastrar : public ComandoIAQuadro {
+class ComandoIAQuadroDescadastrar : public ComandoIAQuadro
+{
     void executar(ISQuadro *);
 };
 
-#endif  // COMANDOS_APRESENTACAO_H_INCLUDED
+#endif // COMANDOS_APRESENTACAO_H_INCLUDED

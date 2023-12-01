@@ -262,8 +262,9 @@ public:
  *
  * O teste valida se a integração ocorre
  */
-class TIApresentacao {
-   public:
+class TIApresentacao
+{
+public:
     void executar();
 };
 
@@ -276,8 +277,9 @@ class TIApresentacao {
  *
  * O teste valida se a autenticação ocorre
  */
-class TUIAAutenticacao {
-   public:
+class TUIAAutenticacao
+{
+public:
     void executar();
 };
 
@@ -285,8 +287,9 @@ class TUIAAutenticacao {
  *
  * O teste valida se a conta funciona
  */
-class TUIAConta {
-   public:
+class TUIAConta
+{
+public:
     void executar();
 };
 
@@ -294,16 +297,19 @@ class TUIAConta {
  *
  * O teste valida se o cartao funciona
  */
-class TUIACartao {
-   public:
+class TUIACartao
+{
+public:
     void executar();
 };
 
 /*! \brief Teste de Modulo de Quadro
  *
  * O teste valida se o quadro funciona
- */class TUIAQuadro {
-   public:
+ */
+class TUIAQuadro
+{
+public:
     void executar();
 };
 
