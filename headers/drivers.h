@@ -30,6 +30,7 @@ class DriverTestesUnitarios : public Drivers
 private:
     const static int DOMINIOS = 1;
     const static int ENTIDADES = 2;
+    const static int MODULOS = 3;
     const static int RETORNAR = 4;
 
 public:
