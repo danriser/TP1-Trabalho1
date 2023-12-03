@@ -190,7 +190,7 @@ public:
 class ComandoSQLDeletarCartao : public ComandoSQL
 {
 public:
-    ComandoSQLDeletarCartao(Email);
+    ComandoSQLDeletarCartao(Codigo);
 };
 class ComandoSQLListarCartao : public ComandoSQL
 {
@@ -203,8 +203,8 @@ public:
 class ComandoSQLListarQuadro : public ComandoSQL
 {
 public:
-    ComandoSQLListarQuadro(Codigo);
-    list<Codigo> getResultado();
+    ComandoSQLListarQuadro(Email);
+    list<Email> getResultado();
 };
 class ComandoSQLDeletarQuadro : public ComandoSQL
 {

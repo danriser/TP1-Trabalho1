@@ -34,6 +34,7 @@ private:
     Texto nome;
     Texto descricao;
     Limite limite;
+    Email email;
 
 public:
     Codigo getCodigo();
@@ -44,6 +45,8 @@ public:
     void setDescricao(const Texto &);
     Limite getLimite();
     void setLimite(const Limite &);
+    Email getEmail();
+    void setEmail(const Email &);
 };
 
 /*! \brief Entidade Cartao
@@ -57,6 +60,7 @@ private:
     Texto nome;
     Texto descricao;
     Coluna coluna;
+    Codigo quadro;
 
 public:
     Codigo getCodigo();
@@ -67,6 +71,8 @@ public:
     void setDescricao(const Texto &);
     Coluna getColuna();
     void setColuna(const Coluna &);
+    Codigo getQuadro();
+    void setQuadro(const Codigo &);
 };
 
 // Conta
@@ -141,6 +147,16 @@ inline void Quadro::setLimite(const Limite &limite)
     this->limite = limite;
 }
 
+inline Email Quadro::getEmail()
+{
+    return email;
+}
+
+inline void Quadro::setEmail(const Email &email)
+{
+    this->email = email;
+}
+
 // Cartao
 inline Codigo Cartao::getCodigo()
 {
@@ -180,6 +196,16 @@ inline Coluna Cartao::getColuna()
 inline void Cartao::setColuna(const Coluna &coluna)
 {
     this->coluna = coluna;
+}
+
+inline Codigo Cartao::getQuadro()
+{
+    return quadro;
+}
+
+inline void Cartao::setQuadro(const Codigo &quadro)
+{
+    this->quadro = quadro;
 }
 
 #endif // ENTIDADES_H_INCLUDED
