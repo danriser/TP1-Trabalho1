@@ -159,7 +159,6 @@ class ComandoSQLContarQuadro : public ComandoSQL
 {
 public:
     ComandoSQLContarQuadro(Email);
-    ComandoSQLContarQuadro(Email);
     int getResultado();
 };
 

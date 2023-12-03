@@ -9,12 +9,12 @@ class BuilderSistema {
 
     IAAutenticacao *ctrlIAAutenticacao;
     IAConta *ctrlIAConta;
-    IAQuadro *ctrlIAQuadro;
+    IACartao *ctrlIACartao;
     IAQuadro *ctrlIAQuadro;
 
     CtrlISAutenticacao *ctrlISAutenticacao;
     CtrlISConta *ctrlISConta;
-    CtrlISQuadro *ctrlISQuadro;
+    CtrlISCartao *ctrlISCartao;
     CtrlISQuadro *ctrlISQuadro;
 
    public:
