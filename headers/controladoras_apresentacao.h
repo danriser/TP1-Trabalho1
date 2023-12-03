@@ -7,6 +7,7 @@
 #include "telas.h"
 
 //----------------------------------------------------------------------------------------------------------------------
+//211068305
 class CtrlIAInicializacao
 {
 private:
@@ -53,7 +54,7 @@ inline void CtrlIAInicializacao::setCtrlIAQuadro(IAQuadro *ctrlIAQuadro)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
-
+//211068305
 class CtrlIAAutenticacao : public IAAutenticacao
 {
 private:
@@ -71,6 +72,7 @@ inline void CtrlIAAutenticacao::setCtrlISAutenticacao(ISAutenticacao *ctrlISAute
 }
 
 //----------------------------------------------------------------------------------------------------------------------
+//211068305
 class CtrlIAConta : public IAConta
 {
 private:
@@ -94,6 +96,7 @@ inline void CtrlIAConta::setCtrlISConta(ISConta *ctrlISConta)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
+//211068305
 class CtrlIACartao : public IACartao
 {
 private:
@@ -117,6 +120,7 @@ inline void CtrlIACartao::setCtrlISCartao(ISCartao *ctrlISCartao)
 }
 
 //----------------------------------------------------------------------------------------------------------------------
+//211068305
 class CtrlIAQuadro : public IAQuadro
 {
 private:

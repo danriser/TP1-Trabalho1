@@ -15,7 +15,7 @@ class ISQuadro;
 
 //----------------------------------------------------------------------------------------------------------------------
 // Declarações das interfaces da camada de apresentação.
-
+//211068379
 class IAAutenticacao
 {
 public:
@@ -23,7 +23,7 @@ public:
     virtual void setCtrlISAutenticacao(ISAutenticacao *) = 0;
     virtual ~IAAutenticacao(){};
 };
-
+//211068379
 class IAConta
 {
 public:
@@ -32,7 +32,7 @@ public:
     virtual void setCtrlISConta(ISConta *) = 0;
     virtual ~IAConta(){};
 };
-
+//211068379
 class IACartao
 {
 public:
@@ -40,7 +40,7 @@ public:
     virtual void setCtrlISCartao(ISCartao *) = 0;
     virtual ~IACartao(){};
 };
-
+//211068379
 class IAQuadro
 {
 public:
@@ -51,14 +51,14 @@ public:
 
 //----------------------------------------------------------------------------------------------------------------------
 // Declarações das interfaces da camada de serviço.
-
+//211068379
 class ISAutenticacao
 {
 public:
     virtual bool autenticar(Email, Senha) = 0;
     virtual ~ISAutenticacao(){};
 };
-
+//211068379
 class ISConta
 {
 public:
@@ -68,7 +68,7 @@ public:
     virtual bool descadastrar(Email) = 0;
     virtual ~ISConta(){};
 };
-
+//211068379
 class ISCartao
 {
 public:
@@ -78,7 +78,7 @@ public:
     virtual bool descadastrar(Codigo) = 0;
     virtual ~ISCartao(){};
 };
-
+//211068379
 class ISQuadro
 {
 public:

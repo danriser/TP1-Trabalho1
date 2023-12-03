@@ -6,6 +6,7 @@
 #include "comandos_servico.h"
 
 //----------------------------------------------------------------------------------------------------------------------
+//221020904
 // Declarações de classes controladoras da camada de serviços e implementações de métodos inline.
 
 class CtrlISAutenticacao : public ISAutenticacao
@@ -15,6 +16,7 @@ public:
 };
 
 //----------------------------------------------------------------------------------------------------------------------
+//221020904
 class CtrlISConta : public ISConta
 {
 public:
@@ -25,6 +27,7 @@ public:
 };
 
 //----------------------------------------------------------------------------------------------------------------------
+//221020904
 class CtrlISCartao : public ISCartao
 {
 public:
@@ -35,6 +38,7 @@ public:
 };
 
 //----------------------------------------------------------------------------------------------------------------------
+//221020904
 class CtrlISQuadro : public ISQuadro
 {
 public:
