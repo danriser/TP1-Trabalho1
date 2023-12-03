@@ -185,7 +185,7 @@ bool StubISCartao::descadastrar(Codigo codigo)
 //----------------------------------------------------------------------------------------------------------------------
 const string StubISQuadro::VALOR_VALIDO_CODIGO = "UN12";
 const string StubISQuadro::VALOR_VALIDO_NOME = "Bolo";
-const string StubISCartao::VALOR_VALIDO_DESCRICAO = "de chocolate";
+const string StubISQuadro::VALOR_VALIDO_DESCRICAO = "de chocolate";
 const int StubISQuadro::VALOR_VALIDO_LIMITE = 15;
 
 Quadro StubISQuadro::quadroStub;
