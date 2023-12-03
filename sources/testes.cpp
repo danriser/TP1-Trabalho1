@@ -482,3 +482,127 @@ int TUCartao::run()
     tearDown();
     return estado;
 }
+
+// --------------------------------------------------------------------------
+/**
+ * Testes de Modulo
+ */
+
+// Definções de constantes e valores validos/invalidos para testes de unidade de cada modulo.
+void TUIAAutenticacao::executar()
+{
+    IAAutenticacao *ctrlIAAutenticacao;
+    StubISAutenticacao *stubISAutenticacao;
+
+    ctrlIAAutenticacao = new CtrlIAAutenticacao();
+    stubISAutenticacao = new StubISAutenticacao();
+
+    ctrlIAAutenticacao->setCtrlISAutenticacao(stubISAutenticacao);
+
+    Email email;
+    TelaMensagem telaMensagem;
+
+    if (ctrlIAAutenticacao->executar(&email))
+    {
+        telaMensagem.apresentar("Sucesso na autenticacao.");
+    }
+    else
+    {
+        telaMensagem.apresentar("Erro de autenticacao.");
+    }
+
+    delete ctrlIAAutenticacao;
+    delete stubISAutenticacao;
+}
+
+void TUIAConta::executar()
+{
+    IAConta *ctrlIAConta;
+    StubISConta *stubISConta;
+
+    ctrlIAConta = new CtrlIAConta();
+    stubISConta = new StubISConta();
+
+    ctrlIAConta->setCtrlISConta(stubISConta);
+
+    Email email;
+    email.setValor("UN12");
+    ctrlIAConta->executar(email);
+
+    delete ctrlIAConta;
+    delete stubISConta;
+}
+
+void TUIACartao::executar()
+{
+    IACartao *ctrlIACartao;
+    StubISCartao *stubISCartao;
+
+    ctrlIACartao = new CtrlIACartao();
+    stubISCartao = new StubISCartao();
+
+    ctrlIACartao->setCtrlISCartao(stubISCartao);
+
+    Email email;
+    ctrlIACartao->executar(email);
+
+    delete ctrlIACartao;
+    delete stubISCartao;
+}
+
+void TUIAQuadro::executar()
+{
+    IAQuadro *ctrlIAQuadro;
+    StubISQuadro *stubISQuadro;
+
+    ctrlIAQuadro = new CtrlIAQuadro();
+    stubISQuadro = new StubISQuadro();
+
+    ctrlIAQuadro->setCtrlISQuadro(stubISQuadro);
+
+    Email email;
+    ctrlIAQuadro->executar(email);
+
+    delete ctrlIAQuadro;
+    delete stubISQuadro;
+}
+
+// --------------------------------------------------------------------------
+/**
+ * Testes de Integracao
+ */
+void TIApresentacao::executar()
+{
+    IAAutenticacao *ctrlIAAutenticacao;
+    IAConta *ctrlIAConta;
+    IACartao *ctrlIACartao;
+    IAQuadro *ctrlIAQuadro;
+
+    StubISAutenticacao *stubISAutenticacao;
+    StubISConta *stubISConta;
+    StubISCartao *stubISCartao;
+    StubISQuadro *stubISQuadro;
+
+    CtrlIAInicializacao ctrlIAInicializacao;
+    ctrlIAAutenticacao = new CtrlIAAutenticacao();
+    ctrlIAConta = new CtrlIAConta();
+    ctrlIACartao = new CtrlIACartao();
+    ctrlIAQuadro = new CtrlIAQuadro();
+
+    stubISAutenticacao = new StubISAutenticacao();
+    stubISConta = new StubISConta();
+    stubISCartao = new StubISCartao();
+    stubISQuadro = new StubISQuadro();
+
+    ctrlIAAutenticacao->setCtrlISAutenticacao(stubISAutenticacao);
+    ctrlIAConta->setCtrlISConta(stubISConta);
+    ctrlIACartao->setCtrlISCartao(stubISCartao);
+    ctrlIAQuadro->setCtrlISQuadro(stubISQuadro);
+
+    ctrlIAInicializacao.setCtrlIAAutenticacao(ctrlIAAutenticacao);
+    ctrlIAInicializacao.setCtrlIAConta(ctrlIAConta);
+    ctrlIAInicializacao.setCtrlIACartao(ctrlIACartao);
+    ctrlIAInicializacao.setCtrlIAQuadro(ctrlIAQuadro);
+
+    ctrlIAInicializacao.executar();
+}

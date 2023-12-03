@@ -4,6 +4,7 @@
 // Mudar o include quando for compilar
 // #include <ncurses.h>
 #include "curses.h"
+#include <vector>
 
 #include "interfaces.h"
 
@@ -41,7 +42,7 @@ public:
 class TelaAutenticacao : public Telas
 {
 private:
-    char matriculaAutenticacao[100] = "";
+    char emailAutenticacao[100] = "";
     char senhaAutenticacao[100] = "";
 
 public:
@@ -56,7 +57,7 @@ private:
     Texto nome;
     Senha senha;
 
-    char matriculaConta[100] = "";
+    char emailConta[100] = "";
     char nomeConta[100] = "";
     char senhaConta[100] = "";
 
@@ -76,7 +77,7 @@ private:
     Codigo codigo;
     Texto nome;
     Texto descricao;
-    Coluna coluna;
+    Coluna coluna_cartao;
 
     char codigoCartao[100] = "";
     char nomeCartao[100] = "";
@@ -104,7 +105,7 @@ private:
     char codigoQuadro[100] = "";
     char nomeQuadro[100] = "";
     char descricaoQuadro[100] = "";
-    char limiteQuadro[100] = "";
+    int limiteQuadro;
 
 public:
     void mostrar(Quadro);        // mostrar valores
@@ -116,10 +117,27 @@ public:
 };
 
 //----------------------------------------------------------------------------------------------------------------------
-class TelaVer : public Telas
-{
-public:
+
+//----------------------------------------------------------------------------------------------------------------------
+class TelaDepuracao : public Telas {
+   public:
     void selecionar(int *);
 };
+
+class TelaTestesUnitarios : public Telas {
+   public:
+    void selecionar(int *);
+};
+
+class TelaTestesModulos : public Telas {
+   public:
+    void selecionar(int *);
+};
+
+class TelaTestesIntegracao : public Telas {
+   public:
+    void selecionar(int *);
+};
+
 
 #endif // TELAS_H_INCLUDED
