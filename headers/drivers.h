@@ -83,11 +83,7 @@ class DriverTestesIntegracao : public Drivers
 {
 private:
     const static int CAMADA_APRESENTACAO = 1;
-    const static int SUBSISTEMA_AUTENTICACAO = 2;
-    const static int SUBSISTEMA_CONTA = 3;
-    const static int SUBSISTEMA_CARTAO = 4;
-    const static int SUBSISTEMA_QUADRO = 5;
-    const static int RETORNAR = 6;
+    const static int RETORNAR = 2;
 
 public:
     void executar();
