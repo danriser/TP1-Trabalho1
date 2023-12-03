@@ -278,13 +278,6 @@ ComandoSQLDescadastrarConta::ComandoSQLDescadastrarConta(Email email)
     comandoSQL += email.getValor();
 }
 
-//----------------------------------------------------------------------------------------------------------------------
-ComandoSQLContarQuadro::ComandoSQLContarQuadro(Email email)
-{
-    comandoSQL = "SELECT COUNT(codigo) from quadro where email = '";
-    comandoSQL += email.getValor();
-    comandoSQL += "'";
-}
 //-----------------------------------------------------------------------------------------------------------------------
 
 ComandoSQLContarCartao::ComandoSQLContarCartao(Codigo quadro)
