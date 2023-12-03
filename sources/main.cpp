@@ -1,36 +1,41 @@
-#include "../headers/comandos_apresentacao.h"
-#include "../headers/controladoras_apresentacao.h"
-#include "../headers/dominios.h"
-#include "../headers/drivers.h"
-#include "../headers/entidades.h"
-#include "../headers/interfaces.h"
-#include "../headers/stubs.h"
-#include "../headers/telas.h"
-#include "../headers/testes.h"
-#include "comandos_apresentacao.cpp"
-#include "controladoras_apresentacao.cpp"
-#include "dominios.cpp"
-#include "drivers.cpp"
-#include "stubs.cpp"
-#include "telas.cpp"
-#include "testes.cpp"
+#include "builder.h"
+#include "comandos_apresentacao.h"
+#include "comandos_servico.h"
+#include "controladoras_apresentacao.h"
+#include "controladoras_servico.h"
+#include "dominios.h"
+#include "drivers.h"
+#include "entidades.h"
+#include "interfaces.h"
+#include "sqlite3.h"
+#include "telas.h"
+#include "testes.h"
 
-#define TESTE
-// #define SISTEMA
+// #define TESTE
+#define SISTEMA
+
 using namespace std;
 
-int main() {
 #ifdef TESTE
-
+int main() {
     DriverDepuracao driverDepuracao;
     driverDepuracao.executar();
 
+    return 0;
+};
 #endif  // TESTE
 
-//----------------------------------------------------------------------------------------------------------------------
 #ifdef SISTEMA
+int main() {
+    BuilderSistema *builder;
+    builder = new BuilderSistema();
 
-#endif  // SISTEMA
+    CtrlIAInicializacao *ctrlIAInicializao;
+    ctrlIAInicializao = builder->construir();
 
-    return 0;
+    ctrlIAInicializao->executar();
+
+    delete builder;
+    return EXIT_SUCCESS;
 }
+#endif  // SISTEMA
