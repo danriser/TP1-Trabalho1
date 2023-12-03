@@ -30,7 +30,7 @@ public:
     virtual void cadastrar() = 0;
     virtual void executar(Email) = 0;
     virtual void setCtrlISConta(ISConta *) = 0;
-    virtual ~IAConta() {}
+    virtual ~IAConta(){};
 };
 
 class IACartao
@@ -66,7 +66,7 @@ public:
     virtual bool cadastrar(Conta) = 0;
     virtual bool editar(Conta) = 0;
     virtual bool descadastrar(Email) = 0;
-    virtual ~ISConta() {}
+    virtual ~ISConta(){};
 };
 
 class ISCartao
