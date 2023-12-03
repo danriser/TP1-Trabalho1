@@ -1,4 +1,4 @@
-#include "dominios.h"
+#include "../headers/dominios.h"
 #include <stdexcept>
 #include <iostream>
 
