@@ -1,128 +1,49 @@
-// Exemplos de classes domínio, classe entidade e testes de unidade.
+#include "../headers/builder.h"
+#include "../headers/comandos_apresentacao.h"
+#include "../headers/comandos_servico.h"
+#include "../headers/controladoras_apresentacao.h"
+#include "../headers/controladoras_servico.h"
+#include "../headers/dominios.h"
+#include "../headers/drivers.h"
+#include "../headers/entidades.h"
+#include "../headers/interfaces.h"
+#include "../headers/sqlite3.h"
+#include "../headers/telas.h"
+#include "../headers/testes.h"
+// #include "builder.cpp"
+// #include "comandos_apresentacao.cpp"
+// #include "controladoras_apresentacao.cpp"
+// #include "controladoras_servico.cpp"
+// #include "dominios.cpp"
+// #include "drivers.cpp"
+// #include "telas.cpp"
+// #include "testes.cpp"
 
-// Incluir cabeçalhos.
-
-#include <iostream>
-#include "dominios.h"
-#include "entidades.h"
-#include "testes.h"
+// #define TESTE
+#define SISTEMA
 
 using namespace std;
 
-int main()
-{
-
-    TUCodigo testeCodigo;
-
-    // Invocar método e apresentar mensagem acerca do resultado do teste.
-
-    switch (testeCodigo.run())
-    {
-    case TUCodigo::SUCESSO:
-        cout << "SUCESSO - CODIGO" << endl;
-        break;
-    case TUCodigo::FALHA:
-        cout << "FALHA   - CODIGO" << endl;
-        break;
-    }
-
-    TULimite testeLimite;
-
-    // Invocar método e apresentar mensagem acerca do resultado do teste.
-
-    switch (testeLimite.run())
-    {
-    case TULimite::SUCESSO:
-        cout << "SUCESSO - LIMITE" << endl;
-        break;
-    case TULimite::FALHA:
-        cout << "FALHA   - LIMITE" << endl;
-        break;
-    }
-
-    TUEmail testeEmail;
-
-    switch (testeEmail.run())
-    {
-    case TUEmail::SUCESSO:
-        cout << "SUCESSO - EMAIL" << endl;
-        break;
-    case TUEmail::FALHA:
-        cout << "FALHA   - EMAIL" << endl;
-        break;
-    }
-
-    TUSenha testeSenha;
-
-    switch (testeSenha.run())
-    {
-    case TUSenha::SUCESSO:
-        cout << "SUCESSO - SENHA" << endl;
-        break;
-    case TUSenha::FALHA:
-        cout << "FALHA   - SENHA" << endl;
-        break;
-    }
-
-    TUTexto testeTexto;
-
-    switch (testeTexto.run())
-    {
-    case TUTexto::SUCESSO:
-        cout << "SUCESSO - TEXTO" << endl;
-        break;
-    case TUTexto::FALHA:
-        cout << "FALHA   - TEXTO" << endl;
-        break;
-    }
-
-    TUColuna testeColuna;
-
-    switch (testeColuna.run())
-    {
-    case TUColuna::SUCESSO:
-        cout << "SUCESSO - COLUNA" << endl;
-        break;
-    case TUColuna::FALHA:
-        cout << "FALHA   - COLUNA" << endl;
-        break;
-    }
-
-    TUConta testeConta;
-
-    switch (testeConta.run())
-    {
-    case TUConta::SUCESSO:
-        cout << "SUCESSO - CONTA" << endl;
-        break;
-    case TUConta::FALHA:
-        cout << "FALHA   - CONTA" << endl;
-        break;
-    }
-
-    TUQuadro testeQuadro;
-
-    switch (testeQuadro.run())
-    {
-    case TUQuadro::SUCESSO:
-        cout << "SUCESSO - QUADRO" << endl;
-        break;
-    case TUQuadro::FALHA:
-        cout << "FALHA   - QUADRO" << endl;
-        break;
-    }
-
-    TUCartao testeCartao;
-
-    switch (testeCartao.run())
-    {
-    case TUCartao::SUCESSO:
-        cout << "SUCESSO - CARTAO" << endl;
-        break;
-    case TUCartao::FALHA:
-        cout << "FALHA   - CARTAO" << endl;
-        break;
-    }
+#ifdef TESTE
+int main() {
+    DriverDepuracao driverDepuracao;
+    driverDepuracao.executar();
 
     return 0;
+};
+#endif  // TESTE
+
+#ifdef SISTEMA
+int main() {
+    BuilderSistema *builder;
+    builder = new BuilderSistema();
+
+    CtrlIAInicializacao *ctrlIAInicializao;
+    ctrlIAInicializao = builder->construir();
+
+    ctrlIAInicializao->executar();
+
+    delete builder;
+    return EXIT_SUCCESS;
 }
+#endif  // SISTEMA

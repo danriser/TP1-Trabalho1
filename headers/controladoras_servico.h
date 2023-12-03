@@ -3,6 +3,7 @@
 
 // #include "comandos_servicos.h"
 #include "interfaces.h"
+#include "comandos_servico.h"
 
 //----------------------------------------------------------------------------------------------------------------------
 // Declarações de classes controladoras da camada de serviços e implementações de métodos inline.
